@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/index.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="header">
+      <div>
+        <h1 id="heading">HOLDINFO.COM</h1>
+        <p id="sub__heading">
+          powered by <span id="finstreet">finstreet</span>
+        </p>
+      </div>
+      <div class="labels">
+        <select name="cars" id="cars">
+          <option value="volvo">INR</option>
+          <option value="saab">Saab</option>
+          <option value="mercedes">Mercedes</option>
+          <option value="audi">Audi</option>
+        </select>
+
+        <select name="cars" id="cars">
+          <option value="volvo">BTC</option>
+          <option value="saab">Saab</option>
+          <option value="mercedes">Mercedes</option>
+          <option value="audi">Audi</option>
+        </select>
+      </div>
+    </div>
+    <div class="coins__container">
+      <div class="coloumn__heading">
+        <div><span>#</span></div>
+        <div><span>name</span></div>
+        <div><span>Last</span></div>
+        <div><span>Buy/Sell price</span></div>
+        <div><span>volume</span></div>
+        <div><span>base unit</span></div>
+      </div>
+
+      <% let i = 1; %> <% Object.keys(coins).forEach(coin => { %>
+      <div class="coins">
+        <div class="index">
+          <h1><%= i %></h1>
+        </div>
+        <% i++ %>
+        <div class="coin__name"><h1><%= coin %></h1></div>
+        <div class="coin__last"><h1>₹<%= coins[coin].last%></h1></div>
+        <div class="coin__bs">
+          <span>₹<%= coins[coin].buy%></span>
+          /
+          <span>₹<%= coins[coin].sell%></span>
+        </div>
+        <div class="coin__vol"><h1><%= coins[coin].volume%></h1></div>
+        <div class="coin__bu"><h1><%= coins[coin].base_unit%></h1></div>
+      </div>
+
+      <% }); %>
+    </div>
+  </body>
+</html>
